@@ -47,7 +47,7 @@ export default function LandingGateway() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <img src="/logo.jpg" alt="UniOS Logo" style={{ height: '100px', borderRadius: '16px', marginBottom: '20px', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.08)' }} />
+        <img src="/logo.jpg" alt="UniOS Logo" style={{ height: '100px', borderRadius: '16px', display: 'block', margin: '0 auto 20px auto', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.08)' }} />
         <h1>Welcome to UniOS</h1>
         <p>The Data-Driven Talent Alignment Ecosystem</p>
       </motion.div>
