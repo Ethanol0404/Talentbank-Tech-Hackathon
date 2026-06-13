@@ -1,0 +1,81 @@
+{
+  "competitions": [
+    {
+      "id": "comp_001",
+      "name": "UTM Data Science Challenge 2024",
+      "organizer": "Universiti Teknologi Malaysia",
+      "type": "data_science",
+      "level": "university",
+      "year": 2024,
+      "format": "48-hour competition",
+      "description": "Teams compete to build predictive models on real-world datasets provided by industry partners.",
+      "skills_tested": ["Machine learning", "Feature engineering", "Model evaluation", "Data storytelling"]
+    },
+    {
+      "id": "comp_002",
+      "name": "Hack&Roll 2024",
+      "organizer": "NUS Hackers (Singapore)",
+      "type": "hackathon",
+      "level": "national",
+      "year": 2024,
+      "format": "24-hour hackathon",
+      "description": "Annual hackathon open to university students. Build anything from scratch within 24 hours.",
+      "skills_tested": ["Rapid prototyping", "Full-stack development", "Problem framing", "Teamwork"]
+    },
+    {
+      "id": "comp_003",
+      "name": "IEEE Algorithm Competition 2023",
+      "organizer": "IEEE Malaysia Section",
+      "type": "algorithm",
+      "level": "national",
+      "year": 2023,
+      "format": "Online competitive programming",
+      "description": "Algorithm and data structure competition with problems ranging from easy to hard difficulty.",
+      "skills_tested": ["Data structures", "Algorithm design", "Time complexity optimisation", "Problem solving"]
+    },
+    {
+      "id": "comp_004",
+      "name": "APU CTF (Capture The Flag) 2024",
+      "organizer": "Asia Pacific University Cybersecurity Club",
+      "type": "ctf",
+      "level": "university",
+      "year": 2024,
+      "format": "Jeopardy-style CTF",
+      "description": "Cybersecurity competition covering web exploitation, reverse engineering, forensics, cryptography, and network challenges.",
+      "skills_tested": ["Web exploitation", "Reverse engineering", "Forensics", "Cryptography", "Network analysis"]
+    },
+    {
+      "id": "comp_005",
+      "name": "MyCERT National Cybersecurity Competition 2023",
+      "organizer": "CyberSecurity Malaysia (MyCERT)",
+      "type": "ctf",
+      "level": "national",
+      "year": 2023,
+      "format": "Attack-defend and Jeopardy CTF",
+      "description": "Government-organised national cybersecurity competition for Malaysian university students.",
+      "skills_tested": ["Penetration testing", "Incident response", "Malware analysis", "Network security"]
+    },
+    {
+      "id": "comp_006",
+      "name": "Shopee Code League 2024",
+      "organizer": "Shopee",
+      "type": "competitive_programming",
+      "level": "regional",
+      "year": 2024,
+      "format": "Multi-round online competition",
+      "description": "Regional competitive programming competition by Shopee targeting Southeast Asian students.",
+      "skills_tested": ["Algorithms", "Data structures", "Optimisation", "Code efficiency"]
+    },
+    {
+      "id": "comp_007",
+      "name": "SANS Holiday Hack Challenge 2023",
+      "organizer": "SANS Institute",
+      "type": "ctf",
+      "level": "international",
+      "year": 2023,
+      "format": "Online CTF",
+      "description": "Annual international cybersecurity challenge by SANS Institute covering a wide range of security topics.",
+      "skills_tested": ["Web security", "Cloud security", "Forensics", "Scripting", "Social engineering awareness"]
+    }
+  ]
+}

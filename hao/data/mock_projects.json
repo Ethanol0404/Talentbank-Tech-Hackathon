@@ -1,0 +1,64 @@
+{
+  "projects": [
+    {
+      "id": "proj_001",
+      "student_id": "student_001",
+      "title": "Student Grade Predictor",
+      "year": 2024,
+      "description": "Developed a machine learning system to predict student academic performance based on attendance, assignment scores, and prior semester grades. Used XGBoost classifier with 89% accuracy. Built a REST API using FastAPI and deployed to AWS EC2. Implemented feature importance analysis to identify key predictors.",
+      "technologies": ["Python", "XGBoost", "Scikit-learn", "FastAPI", "AWS EC2", "Pandas", "NumPy"],
+      "type": "individual",
+      "outcome": "Deployed and presented at UTM Faculty Showcase 2024"
+    },
+    {
+      "id": "proj_002",
+      "student_id": "student_001",
+      "title": "Twitter Sentiment Analysis API",
+      "year": 2023,
+      "description": "Built a sentiment analysis system for Malaysian Twitter data using fine-tuned BERT transformer model. Achieved 87% accuracy on a balanced 10,000-tweet test dataset. Developed a REST API using FastAPI for real-time inference. Applied preprocessing for Malay-English code-switching text.",
+      "technologies": ["Python", "PyTorch", "HuggingFace Transformers", "BERT", "FastAPI", "Docker"],
+      "type": "individual",
+      "outcome": "Published as GitHub open-source project with 47 stars"
+    },
+    {
+      "id": "proj_003",
+      "student_id": "student_001",
+      "title": "Customer Churn Prediction Dashboard",
+      "year": 2024,
+      "description": "Internship project: Built a customer churn prediction model for a Malaysian telco dataset with 500,000+ records. Used scikit-learn pipeline with Random Forest and Gradient Boosting. Created an interactive dashboard in Tableau for the analytics team.",
+      "technologies": ["Python", "Scikit-learn", "Pandas", "Tableau", "SQL", "AWS S3"],
+      "type": "internship",
+      "outcome": "Deployed in production at TechCorp Malaysia"
+    },
+    {
+      "id": "proj_004",
+      "student_id": "student_002",
+      "title": "Library Management System",
+      "year": 2024,
+      "description": "Developed a full-stack web application for university library management. Backend implemented in Spring Boot with MySQL database. Features include role-based access control, book reservation, fine calculation, and report generation. Containerized with Docker.",
+      "technologies": ["Java", "Spring Boot", "MySQL", "Docker", "Maven", "HTML", "CSS", "JavaScript"],
+      "type": "group",
+      "outcome": "Adopted by MMU library department for pilot testing"
+    },
+    {
+      "id": "proj_005",
+      "student_id": "student_002",
+      "title": "Task Manager REST API",
+      "year": 2023,
+      "description": "Designed and implemented a RESTful API for collaborative task management. Built with FastAPI and PostgreSQL. Implements JWT authentication, task assignment, deadline tracking, and email notifications. Comprehensive API documentation using Swagger/OpenAPI.",
+      "technologies": ["Python", "FastAPI", "PostgreSQL", "JWT", "Docker", "Postman"],
+      "type": "individual",
+      "outcome": "Personal portfolio project"
+    },
+    {
+      "id": "proj_006",
+      "student_id": "student_003",
+      "title": "Network Port Scanner Tool",
+      "year": 2024,
+      "description": "Built a multi-threaded network port scanner in Python capable of scanning large IP ranges. Features service fingerprinting, OS detection heuristics, and output in JSON/CSV/XML formats. Used in APU Cybersecurity Club training sessions.",
+      "technologies": ["Python", "Socket programming", "Threading", "Nmap API", "JSON/CSV/XML"],
+      "type": "individual",
+      "outcome": "Open-sourced on GitHub, used by APU Cybersecurity Club"
+    }
+  ]
+}

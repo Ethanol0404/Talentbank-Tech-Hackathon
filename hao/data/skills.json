@@ -1,0 +1,96 @@
+{
+  "skills_taxonomy": {
+    "technical": {
+      "programming_languages": [
+        "Python", "Java", "JavaScript", "TypeScript", "C", "C++", "C#",
+        "R", "Go", "Rust", "SQL", "Bash", "Shell Scripting", "PHP", "Kotlin", "Swift"
+      ],
+      "ml_frameworks": [
+        "Scikit-learn", "TensorFlow", "Keras", "PyTorch", "XGBoost", "LightGBM",
+        "HuggingFace Transformers", "spaCy", "NLTK", "OpenCV"
+      ],
+      "data_tools": [
+        "Pandas", "NumPy", "Matplotlib", "Seaborn", "Plotly", "Tableau",
+        "Power BI", "Apache Spark", "Hadoop", "Kafka", "Airflow"
+      ],
+      "web_frameworks": [
+        "FastAPI", "Flask", "Django", "Spring Boot", "Express.js",
+        "React", "Vue.js", "Next.js", "Angular"
+      ],
+      "databases": [
+        "MySQL", "PostgreSQL", "MongoDB", "Redis", "SQLite",
+        "Elasticsearch", "Cassandra", "DynamoDB"
+      ],
+      "cloud_platforms": [
+        "AWS", "Google Cloud Platform", "Microsoft Azure",
+        "AWS EC2", "AWS S3", "AWS Lambda", "AWS RDS"
+      ],
+      "devops_tools": [
+        "Docker", "Kubernetes", "Git", "GitHub Actions", "Jenkins",
+        "Terraform", "Ansible", "CI/CD"
+      ],
+      "security_tools": [
+        "Wireshark", "Metasploit", "Nmap", "Burp Suite", "Nessus",
+        "Splunk", "SIEM", "Snort", "Kali Linux"
+      ],
+      "methodologies": [
+        "Agile", "Scrum", "TDD", "BDD", "REST API design",
+        "Microservices", "OOP", "Functional Programming"
+      ]
+    },
+    "soft": {
+      "communication": [
+        "Public speaking", "Technical writing", "Presentation skills",
+        "Documentation", "Report writing", "Stakeholder communication"
+      ],
+      "leadership": [
+        "Team leadership", "Project management", "Mentoring", "Event organisation",
+        "Decision making", "Conflict resolution", "Strategic planning"
+      ],
+      "collaboration": [
+        "Teamwork", "Cross-functional collaboration", "Pair programming",
+        "Code review", "Knowledge sharing"
+      ],
+      "problem_solving": [
+        "Analytical thinking", "Critical thinking", "Root cause analysis",
+        "Design thinking", "Algorithm design", "Debugging"
+      ],
+      "personal": [
+        "Time management", "Self-directed learning", "Adaptability",
+        "Attention to detail", "Work ethic", "Creativity"
+      ]
+    },
+    "role_skill_mapping": {
+      "Data Scientist": {
+        "required_technical": ["Python", "Machine learning", "SQL", "Statistics", "Data visualisation"],
+        "required_soft": ["Communication", "Problem solving", "Analytical thinking"],
+        "preferred_technical": ["Deep learning", "Cloud platforms", "Big data tools"],
+        "preferred_certifications": ["Google Data Analytics", "AWS Machine Learning", "Databricks"]
+      },
+      "Backend Software Engineer": {
+        "required_technical": ["Java or Python or Go", "REST API design", "SQL databases", "Git", "Docker"],
+        "required_soft": ["Problem solving", "Teamwork", "Attention to detail"],
+        "preferred_technical": ["Microservices", "Kubernetes", "Message queues", "Cloud platforms"],
+        "preferred_certifications": ["AWS Developer", "Oracle Java Certification"]
+      },
+      "Security Analyst": {
+        "required_technical": ["Network fundamentals", "SIEM", "Vulnerability assessment", "Incident response"],
+        "required_soft": ["Analytical thinking", "Documentation", "Attention to detail"],
+        "preferred_technical": ["Penetration testing", "Malware analysis", "Forensics", "Cloud security"],
+        "preferred_certifications": ["CompTIA Security+", "CEH", "OSCP", "CISSP"]
+      },
+      "Machine Learning Engineer": {
+        "required_technical": ["Python", "ML frameworks", "MLOps", "Docker", "Cloud platforms", "API development"],
+        "required_soft": ["Problem solving", "Communication", "Continuous learning"],
+        "preferred_technical": ["Kubernetes", "Spark", "Feature stores", "Model monitoring"],
+        "preferred_certifications": ["AWS Machine Learning", "GCP Professional ML Engineer"]
+      },
+      "Full Stack Developer": {
+        "required_technical": ["JavaScript/TypeScript", "React or Vue", "Node.js or similar backend", "SQL", "Git"],
+        "required_soft": ["Teamwork", "Communication", "Problem solving"],
+        "preferred_technical": ["Docker", "CI/CD", "Cloud deployment", "Testing frameworks"],
+        "preferred_certifications": ["AWS Developer", "MongoDB Developer"]
+      }
+    }
+  }
+}

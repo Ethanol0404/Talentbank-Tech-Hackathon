@@ -1,0 +1,13 @@
+{
+  "mock_projects": [
+    {
+      "id": "proj_001",
+      "student_id": "student_001",
+      "title": "Student Grade Predictor",
+      "description": "Developed a machine learning system to predict student academic performance. Used XGBoost with 89% accuracy. Built REST API using FastAPI and deployed to AWS EC2.",
+      "technologies": ["Python", "XGBoost", "FastAPI", "AWS EC2"],
+      "outcome": "Deployed at UTM Faculty Showcase 2024"
+    }
+  ],
+  "_note": "See mock_projects.json for the full dataset. This file is an alias for backwards compatibility."
+}

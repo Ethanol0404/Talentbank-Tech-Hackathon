@@ -1,0 +1,94 @@
+{
+  "workshops": [
+    {
+      "id": "ws_001",
+      "title": "AWS Cloud Practitioner Essentials",
+      "organizer": "Amazon Web Services",
+      "type": "industry",
+      "duration_hours": 16,
+      "topics": ["Cloud computing fundamentals", "AWS core services", "Security & compliance", "Pricing & support"],
+      "certification_track": "AWS Certified Cloud Practitioner",
+      "year": 2024
+    },
+    {
+      "id": "ws_002",
+      "title": "Introduction to Machine Learning with Python",
+      "organizer": "Coursera / Stanford Online",
+      "type": "online_course",
+      "duration_hours": 40,
+      "topics": ["Supervised learning", "Unsupervised learning", "Neural networks", "Model evaluation"],
+      "certification_track": "Machine Learning Specialization",
+      "year": 2023
+    },
+    {
+      "id": "ws_003",
+      "title": "Docker & Kubernetes Fundamentals",
+      "organizer": "MMU Technology Centre",
+      "type": "university",
+      "duration_hours": 8,
+      "topics": ["Containerisation", "Docker Compose", "Kubernetes basics", "CI/CD pipeline"],
+      "certification_track": null,
+      "year": 2024
+    },
+    {
+      "id": "ws_004",
+      "title": "RESTful API Design with FastAPI",
+      "organizer": "MMU Computer Science Department",
+      "type": "university",
+      "duration_hours": 6,
+      "topics": ["API design principles", "FastAPI framework", "OpenAPI/Swagger", "Authentication"],
+      "certification_track": null,
+      "year": 2024
+    },
+    {
+      "id": "ws_005",
+      "title": "OWASP Top 10 Hands-on Workshop",
+      "organizer": "Malaysia Cybersecurity Industry",
+      "type": "industry",
+      "duration_hours": 12,
+      "topics": ["SQL Injection", "XSS", "Broken Authentication", "Security Misconfiguration", "Practical exploitation labs"],
+      "certification_track": null,
+      "year": 2023
+    },
+    {
+      "id": "ws_006",
+      "title": "Network Forensics & Incident Response",
+      "organizer": "CyberSecurity Malaysia",
+      "type": "government",
+      "duration_hours": 16,
+      "topics": ["Network traffic analysis", "Wireshark", "Incident response lifecycle", "Evidence preservation"],
+      "certification_track": null,
+      "year": 2024
+    },
+    {
+      "id": "ws_007",
+      "title": "Google Data Analytics Certificate Program",
+      "organizer": "Google / Coursera",
+      "type": "online_course",
+      "duration_hours": 180,
+      "topics": ["Data cleaning", "SQL", "Tableau", "R programming", "Statistical analysis", "Data storytelling"],
+      "certification_track": "Google Data Analytics Professional Certificate",
+      "year": 2024
+    },
+    {
+      "id": "ws_008",
+      "title": "Agile & Scrum Fundamentals",
+      "organizer": "UTM Centre for Continuing Education",
+      "type": "university",
+      "duration_hours": 8,
+      "topics": ["Agile manifesto", "Scrum framework", "Sprint planning", "Retrospectives"],
+      "certification_track": null,
+      "year": 2023
+    },
+    {
+      "id": "ws_009",
+      "title": "Offensive Security Fundamentals",
+      "organizer": "APU Cybersecurity Department",
+      "type": "university",
+      "duration_hours": 20,
+      "topics": ["Reconnaissance", "Scanning & enumeration", "Exploitation basics", "Post-exploitation", "Reporting"],
+      "certification_track": null,
+      "year": 2024
+    }
+  ]
+}

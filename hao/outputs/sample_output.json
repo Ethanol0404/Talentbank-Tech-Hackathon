@@ -1,0 +1,140 @@
+{
+  "sample_output": {
+    "student": "Ahmad Faris bin Zulkifli",
+    "target_role": "Data Scientist",
+    "generated_at": "2026-06-13T12:00:00+08:00",
+    "provider_used": "groq",
+    "pipeline_results": {
+
+      "hidden_skill_extraction": {
+        "technical_skills": [
+          "Python",
+          "R",
+          "SQL",
+          "Scikit-learn",
+          "XGBoost",
+          "TensorFlow",
+          "BERT",
+          "HuggingFace Transformers",
+          "FastAPI",
+          "Flask",
+          "Pandas",
+          "NumPy",
+          "Matplotlib",
+          "Tableau",
+          "AWS EC2",
+          "AWS S3",
+          "AWS Lambda",
+          "Docker",
+          "Git",
+          "Jupyter Notebook",
+          "Natural Language Processing",
+          "REST API development"
+        ],
+        "soft_skills": [
+          "Leadership",
+          "Event organisation",
+          "Technical presentation",
+          "Research collaboration",
+          "Team coordination"
+        ],
+        "mapped_roles": [
+          "Data Scientist",
+          "Machine Learning Engineer",
+          "NLP Engineer",
+          "Data Analyst",
+          "Research Assistant"
+        ]
+      },
+
+      "readiness_scores": {
+        "technical": 88,
+        "communication": 70,
+        "leadership": 72,
+        "problem_solving": 85,
+        "industry_exposure": 60,
+        "overall_readiness": 79
+      },
+
+      "recommendations": {
+        "missing_skills": [
+          "MLOps and model monitoring",
+          "Big data processing (Apache Spark or similar)",
+          "Advanced SQL and database optimisation",
+          "Cloud-based ML deployment (SageMaker or Vertex AI)",
+          "Statistical hypothesis testing"
+        ],
+        "recommendations": [
+          {
+            "action": "Complete the AWS Machine Learning Specialty certification",
+            "rationale": "Directly addresses the gap in cloud-based ML deployment, a required skill for production Data Scientist roles",
+            "priority": "high"
+          },
+          {
+            "action": "Build and deploy an end-to-end MLOps pipeline using MLflow and Docker",
+            "rationale": "MLOps knowledge is identified as missing and is critical for the Data Scientist role in industry",
+            "priority": "high"
+          },
+          {
+            "action": "Participate in a Kaggle competition focused on tabular data",
+            "rationale": "Strengthens feature engineering, model selection, and competition-level problem solving skills",
+            "priority": "medium"
+          },
+          {
+            "action": "Complete a course on Apache Spark for big data processing",
+            "rationale": "Big data tools are required for Data Scientist roles handling enterprise-scale datasets",
+            "priority": "medium"
+          },
+          {
+            "action": "Seek a data science internship at a financial institution or e-commerce company",
+            "rationale": "Industry exposure score of 60 is below the threshold for mid-level Data Scientist positions",
+            "priority": "high"
+          }
+        ]
+      },
+
+      "explainability": {
+        "summary": "Ahmad demonstrates strong technical capability and above-average problem-solving aptitude, supported by hands-on experience in machine learning projects and competition placements. His overall readiness of 79 reflects a solid foundation, with the primary gap being limited industry-scale deployment experience and MLOps knowledge.",
+        "dimension_explanations": {
+          "technical": "The technical score of 88 reflects Ahmad's broad and deep skill set across Python, SQL, and multiple ML frameworks including Scikit-learn, XGBoost, and BERT. His two completed ML projects (Student Grade Predictor deployed on AWS EC2, and Sentiment Analysis API using FastAPI) demonstrate practical application of these skills beyond coursework.",
+          "communication": "The communication score of 70 is based on Ahmad's role as Technical Lead for the UTM AI Hackathon, which required coordinating teams and presenting technical plans. The score does not reach 80+ because no evidence of published writing, external presentations, or formal communication training was detected in the profile.",
+          "leadership": "The leadership score of 72 reflects Ahmad's Vice President role in the UTM Data Science Club and his Technical Lead position in the hackathon organising committee. Both roles are evidenced in the resume and student record. The score is limited by the absence of evidence of mentoring, external community leadership, or formal project management.",
+          "problem_solving": "The problem-solving score of 85 is supported by Ahmad's 2nd place finish in the IEEE Algorithm Competition 2023, Top 10 placement in the UTM Data Science Challenge 2024, and the technical complexity of his BERT-based sentiment analysis project achieving 87% accuracy. These represent concrete, measurable evidence of competitive problem-solving ability.",
+          "industry_exposure": "The industry exposure score of 60 reflects one completed internship at TechCorp Malaysia (3 months). While this provides real-world context, the duration and single exposure point limit the score. No external industry certifications beyond AWS Cloud Practitioner were detected, and no full-time industry project experience is present."
+        },
+        "strengths": [
+          "Proven machine learning engineering capability demonstrated through two independently deployed projects",
+          "Competition performance (IEEE 2nd place, UTM Data Science Top 10) evidences strong analytical and problem-solving skills",
+          "Leadership experience as Vice President and Technical Lead provides organisational and coordination competency",
+          "AWS EC2 deployment experience demonstrates ability to move models from notebook to production environment"
+        ],
+        "improvement_areas": [
+          "No evidence of MLOps practices (model monitoring, CI/CD for ML, experiment tracking) — a gap for industry Data Scientist roles",
+          "Industry exposure limited to one 3-month internship — additional industry projects or a second internship would strengthen this dimension",
+          "No evidence of big data processing experience (Spark, Hadoop) — important for large-scale data scientist positions",
+          "Communication dimension would benefit from evidence of technical writing, blog posts, or external presentations"
+        ]
+      },
+
+      "resume_rewriter": {
+        "input_bullets": [
+          "helped build a customer churn prediction model using Python and scikit-learn",
+          "was involved in cleaning and preprocessing 500,000-row datasets",
+          "assisted in creating a dashboard in Tableau for the analytics team",
+          "worked on natural language processing research under Dr. Rahman",
+          "helped collect and annotate text data for sentiment analysis",
+          "was part of the team that prepared a conference paper submission"
+        ],
+        "rewritten_bullets": [
+          "Developed a customer churn prediction model using Python and Scikit-learn, achieving production deployment for TechCorp Malaysia analytics pipeline",
+          "Processed and cleaned a 500,000-row customer dataset, applying feature engineering techniques to prepare data for ML modelling",
+          "Designed an interactive Tableau dashboard for the analytics team to monitor churn model predictions and key business metrics",
+          "Conducted natural language processing research under faculty supervision, contributing to the UTM AI Lab's ongoing NLP programme",
+          "Collected and annotated a text corpus for sentiment analysis, applying labelling guidelines to ensure dataset quality for model training",
+          "Co-authored a conference paper submission, contributing to the research methodology, literature review, and results documentation sections"
+        ]
+      }
+
+    }
+  }
+}

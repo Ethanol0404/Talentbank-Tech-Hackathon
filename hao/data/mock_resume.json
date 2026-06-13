@@ -1,0 +1,37 @@
+{
+  "resumes": [
+    {
+      "id": "resume_001",
+      "student_id": "student_001",
+      "full_text": "AHMAD FARIS BIN ZULKIFLI\nahmad.faris@graduate.utm.my | +60-12-345-6789 | linkedin.com/in/ahmadfaris | github.com/ahmadfaris\n\nEDUCATION\nBachelor of Computer Science (Data Science), Universiti Teknologi Malaysia\nExpected Graduation: June 2025 | CGPA: 3.72 / 4.00\nDean's List: Semester 1 & 2, Year 2\n\nSKILLS\nProgramming: Python, R, SQL, JavaScript\nML Frameworks: Scikit-learn, TensorFlow, Keras, XGBoost\nData Tools: Pandas, NumPy, Matplotlib, Seaborn, Tableau\nCloud: AWS (S3, EC2, Lambda), Google Cloud Platform\nOther: Git, Docker, FastAPI, Flask, Jupyter Notebook\n\nEXPERIENCE\nData Science Intern — TechCorp Malaysia (Jun–Sep 2024)\n• helped build a customer churn prediction model using Python and scikit-learn\n• was involved in cleaning and preprocessing 500,000-row datasets\n• assisted in creating a dashboard in Tableau for the analytics team\n\nUNDERGRADUATE RESEARCH ASSISTANT — UTM AI Lab (Jan–May 2024)\n• worked on natural language processing research under Dr. Rahman\n• helped collect and annotate text data for sentiment analysis\n• was part of the team that prepared a conference paper submission\n\nPROJECTS\nStudent Grade Predictor (2024)\n• used machine learning to predict student academic performance\n• built with Python, scikit-learn, and Flask\n• deployed on AWS EC2\n\nSentiment Analysis System (2023)\n• created a Twitter sentiment classifier using BERT\n• achieved 87% accuracy on the test set\n• built REST API using FastAPI\n\nACTIVITIES\n• Vice President, UTM Data Science Club\n• Technical Lead, UTM AI Hackathon 2024\n• UTM Data Science Challenge 2024 — Top 10 Finalist\n• IEEE Algorithm Competition 2023 — 2nd Place",
+      "raw_bullets": [
+        "helped build a customer churn prediction model using Python and scikit-learn",
+        "was involved in cleaning and preprocessing 500,000-row datasets",
+        "assisted in creating a dashboard in Tableau for the analytics team",
+        "worked on natural language processing research under Dr. Rahman",
+        "helped collect and annotate text data for sentiment analysis",
+        "was part of the team that prepared a conference paper submission"
+      ]
+    },
+    {
+      "id": "resume_002",
+      "student_id": "student_002",
+      "full_text": "PRIYA NAIR\npriya.nair@student.mmu.edu.my | +60-11-234-5678\n\nEDUCATION\nBachelor of Software Engineering, Multimedia University\nExpected Graduation: November 2026 | CGPA: 3.45 / 4.00\n\nSKILLS\nLanguages: Java, Python, SQL, Bash\nFrameworks: Spring Boot, FastAPI, Flask\nDatabases: MySQL, PostgreSQL, MongoDB\nTools: Docker, Git, Maven, Postman\nOther: REST API design, Agile/Scrum\n\nEXPERIENCE\nSoftware Developer Intern — Fintech Startup KL (May–Aug 2024)\n• helped develop REST API endpoints for a payment processing system\n• was involved in writing unit tests using JUnit\n• assisted in database schema design for a new transaction module\n\nPROJECTS\nLibrary Management System (2024)\n• built a full-stack web application for university library\n• backend in Spring Boot, database in MySQL\n• implemented role-based access control\n\nTask Manager API (2023)\n• created a RESTful API for task tracking\n• used FastAPI and PostgreSQL\n• wrote comprehensive API documentation\n\nACTIVITIES\n• MMU Code Sprint 2024 — Participant\n• Shopee Code League 2024 — Round 1 Qualifier\n• Docker & Kubernetes Fundamentals Workshop attendee",
+      "raw_bullets": [
+        "helped develop REST API endpoints for a payment processing system",
+        "was involved in writing unit tests using JUnit",
+        "assisted in database schema design for a new transaction module"
+      ]
+    },
+    {
+      "id": "resume_003",
+      "student_id": "student_003",
+      "full_text": "LIM WEI JIE\nweijie.lim@student.apu.edu.my | +60-16-789-0123 | github.com/weijielim\n\nEDUCATION\nBachelor of Information Technology (Cybersecurity), Asia Pacific University\nExpected Graduation: March 2025 | CGPA: 3.88 / 4.00\n\nSKILLS\nSecurity: Penetration Testing, Vulnerability Assessment, Incident Response\nTools: Wireshark, Metasploit, Nmap, Burp Suite, Nessus\nLanguages: Python, Bash, C\nOther: Network Forensics, OWASP Top 10, SIEM tools\n\nEXPERIENCE\nCybersecurity Intern — Malaysia Digital Economy Corporation (Apr–Aug 2024)\n• helped conduct vulnerability assessments on web applications\n• was involved in monitoring SIEM alerts and escalating incidents\n• assisted in writing security incident reports\n\nPROJECTS\nNetwork Scanner Tool (2024)\n• built a custom network port scanner in Python\n• supports multi-threaded scanning and service fingerprinting\n\nACTIVITIES\n• President, APU Cybersecurity Club (2023–2024)\n• APU CTF Competition 2024 — 1st Place\n• MyCERT National Cybersecurity Competition 2023 — Finalist\n• CompTIA Security+ Certified",
+      "raw_bullets": [
+        "helped conduct vulnerability assessments on web applications",
+        "was involved in monitoring SIEM alerts and escalating incidents",
+        "assisted in writing security incident reports"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "students": [
+    {
+      "id": "student_001",
+      "name": "Ahmad Faris bin Zulkifli",
+      "year": 3,
+      "program": "Bachelor of Computer Science (Data Science)",
+      "university": "Universiti Teknologi Malaysia",
+      "gpa": 3.72,
+      "target_role": "Data Scientist",
+      "resume_id": "resume_001",
+      "project_ids": ["proj_001", "proj_002", "proj_003"],
+      "competition_history": [
+        "UTM Data Science Challenge 2024 — Top 10 Finalist",
+        "Hack&Roll Hackathon 2024 — Participant",
+        "IEEE Algorithm Competition 2023 — 2nd Place"
+      ],
+      "workshop_history": [
+        "AWS Cloud Practitioner Workshop (2024)",
+        "Introduction to Machine Learning — Coursera",
+        "Google Data Analytics Certificate Workshop"
+      ],
+      "certificates": [
+        "AWS Certified Cloud Practitioner",
+        "Google Data Analytics Professional Certificate",
+        "Python for Data Science — IBM"
+      ],
+      "github_summary": "28 public repositories, 420 contributions in 2024, primary languages: Python (70%), SQL (20%), JavaScript (10%). Notable repos: ml-sentiment-analysis (47 stars), student-grade-predictor (12 stars).",
+      "leadership_roles": [
+        "Vice President — UTM Data Science Club (2023–2024)",
+        "Technical Lead — UTM AI Hackathon Organizing Committee"
+      ]
+    },
+    {
+      "id": "student_002",
+      "name": "Priya Nair",
+      "year": 2,
+      "program": "Bachelor of Software Engineering",
+      "university": "Multimedia University",
+      "gpa": 3.45,
+      "target_role": "Backend Software Engineer",
+      "resume_id": "resume_002",
+      "project_ids": ["proj_004", "proj_005"],
+      "competition_history": [
+        "MMU Code Sprint 2024 — Participant",
+        "Shopee Code League 2024 — Round 1 Qualifier"
+      ],
+      "workshop_history": [
+        "Docker & Kubernetes Fundamentals Workshop",
+        "RESTful API Design with FastAPI"
+      ],
+      "certificates": [
+        "Oracle Certified Associate Java SE 8 Programmer"
+      ],
+      "github_summary": "12 public repositories, 185 contributions in 2024, primary languages: Java (60%), Python (30%), Bash (10%).",
+      "leadership_roles": []
+    },
+    {
+      "id": "student_003",
+      "name": "Lim Wei Jie",
+      "year": 4,
+      "program": "Bachelor of Information Technology (Cybersecurity)",
+      "university": "Asia Pacific University",
+      "gpa": 3.88,
+      "target_role": "Security Analyst",
+      "resume_id": "resume_003",
+      "project_ids": ["proj_006"],
+      "competition_history": [
+        "SANS Holiday Hack Challenge 2023 — Completed",
+        "APU CTF (Capture The Flag) 2024 — 1st Place",
+        "MyCERT National Cybersecurity Competition 2023 — Finalist"
+      ],
+      "workshop_history": [
+        "Offensive Security Fundamentals — APU Internal",
+        "OWASP Top 10 Hands-on Workshop",
+        "Network Forensics & Incident Response Training"
+      ],
+      "certificates": [
+        "CompTIA Security+",
+        "Certified Ethical Hacker (CEH) — in progress"
+      ],
+      "github_summary": "8 public repositories, 90 contributions in 2024, primary languages: Python (50%), Bash (35%), C (15%). Notable: network-scanner tool, ctf-writeups.",
+      "leadership_roles": [
+        "President — APU Cybersecurity Club"
+      ]
+    }
+  ]
+}
