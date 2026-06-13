@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import { useAppState } from '@/context/AppStateContext';
+import { motion } from 'framer-motion';
 
 export default function OnboardingWizard() {
   const { addStudent, setActiveScreen } = useAppState();
@@ -154,7 +155,12 @@ export default function OnboardingWizard() {
 
       <div className="split-grid">
         {/* Left Column: Drag & Drop zone */}
-        <div className="card">
+        <motion.div 
+          className="card"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="card-title">Upload Profile Documents</div>
           <div 
             className={`upload-zone ${dragOver ? 'dragover' : ''}`}
@@ -192,10 +198,15 @@ export default function OnboardingWizard() {
               </div>
             </div>
           )}
-        </div>
+        </motion.div>
 
         {/* Right Column: Document Checklist */}
-        <div className="card">
+        <motion.div 
+          className="card"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="card-title">Ingestion & Verification Status</div>
           <ul className="checklist-list" style={{ listStyle: 'none', padding: 0 }}>
             <li className="checklist-item" style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid var(--border-light)' }}>
@@ -225,7 +236,7 @@ export default function OnboardingWizard() {
               <span className="badge badge-optional">Optional</span>
             </li>
           </ul>
-        </div>
+        </motion.div>
       </div>
 
       <div className="flex-between mt-24">

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useAppState } from '@/context/AppStateContext';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ShortlistPipeline() {
   const { shortlist, toggleShortlist, setActiveScreen } = useAppState();
@@ -186,43 +187,60 @@ export default function ShortlistPipeline() {
       </div>
 
       {/* Recruiter-Candidate Live Interview Simulation Modal */}
-      {modalActive && activeCandidate && (
-        <div className="modal-overlay active" id="interview-modal">
-          <div className="modal-content" style={{ maxWidth: '550px' }}>
-            <div className="modal-header">
-              <h3>Live Fit Evaluation & Interview Simulation</h3>
-              <button className="modal-close" onClick={() => setModalActive(false)}>&times;</button>
-            </div>
-            
-            <div className="chat-history" id="interview-chat-history">
-              {messages.map((msg, idx) => (
-                <div 
-                  key={idx} 
-                  className={msg.isAi ? 'chat-bubble-ai' : 'chat-bubble-user'}
-                >
-                  <strong>{msg.sender}:</strong> {msg.text}
-                </div>
-              ))}
-              <div ref={chatEndRef} />
-            </div>
+      <AnimatePresence>
+        {modalActive && activeCandidate && (
+          <motion.div 
+            className="modal-overlay active" 
+            id="interview-modal"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <motion.div 
+              className="modal-content" 
+              style={{ maxWidth: '550px' }}
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 250 }}
+            >
+              <div className="modal-header">
+                <h3>Live Fit Evaluation & Interview Simulation</h3>
+                <button className="modal-close" onClick={() => setModalActive(false)}>&times;</button>
+              </div>
+              
+              <div className="chat-history" id="interview-chat-history">
+                {messages.map((msg, idx) => (
+                  <div 
+                    key={idx} 
+                    className={msg.isAi ? 'chat-bubble-ai' : 'chat-bubble-user'}
+                  >
+                    <strong>{msg.sender}:</strong> {msg.text}
+                  </div>
+                ))}
+                <div ref={chatEndRef} />
+              </div>
 
-            <div className="flex-gap-16">
-              <input 
-                type="text" 
-                className="form-input" 
-                value={inputVal}
-                onChange={(e) => setInputVal(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
-                placeholder="Type your response here..." 
-                style={{ flexGrow: 1 }}
-              />
-              <button className="btn btn-primary" onClick={handleSendMessage} style={{ padding: '10px 16px' }}>
-                Send
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+              <div className="flex-gap-16">
+                <input 
+                  type="text" 
+                  className="form-input" 
+                  value={inputVal}
+                  onChange={(e) => setInputVal(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
+                  placeholder="Type your response here..." 
+                  style={{ flexGrow: 1 }}
+                />
+                <button className="btn btn-primary" onClick={handleSendMessage} style={{ padding: '10px 16px' }}>
+                  Send
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
+
   );
 }

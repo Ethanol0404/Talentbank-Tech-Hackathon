@@ -3,6 +3,7 @@
 import React from 'react';
 import { useAppState } from '@/context/AppStateContext';
 import { useTheme } from '@/context/ThemeContext';
+import { motion } from 'framer-motion';
 
 export default function LandingGateway() {
   const { enterPersona } = useAppState();
@@ -40,16 +41,27 @@ export default function LandingGateway() {
         </button>
       </div>
 
-      <div className="hero-section">
+      <motion.div 
+        className="hero-section"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <img src="/logo.jpg" alt="UniOS Logo" style={{ height: '100px', borderRadius: '16px', marginBottom: '20px', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.08)' }} />
         <h1>Welcome to UniOS</h1>
         <p>The Data-Driven Talent Alignment Ecosystem</p>
-      </div>
+      </motion.div>
 
       {/* Core 3-Column Grid */}
       <div className="three-column-grid">
         {/* Card 1: Student View */}
-        <div className="gateway-card">
+        <motion.div 
+          className="gateway-card"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          whileHover={{ y: -5, scale: 1.02 }}
+        >
           <div className="gateway-icon">
             <svg viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
@@ -65,10 +77,16 @@ export default function LandingGateway() {
             <li>AI Resume Booster and ATS</li>
           </ul>
           <button className="btn btn-primary w-fill" onClick={() => enterPersona('student')}>Enter Student View</button>
-        </div>
+        </motion.div>
 
         {/* Card 2: University View */}
-        <div className="gateway-card">
+        <motion.div 
+          className="gateway-card"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          whileHover={{ y: -5, scale: 1.02 }}
+        >
           <div className="gateway-icon">
             <svg viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
@@ -83,10 +101,16 @@ export default function LandingGateway() {
             <li>Cohort Skill Trends</li>
           </ul>
           <button className="btn btn-primary w-fill" onClick={() => enterPersona('university')}>Enter Lecturer View</button>
-        </div>
+        </motion.div>
 
         {/* Card 3: Employer View */}
-        <div className="gateway-card">
+        <motion.div 
+          className="gateway-card"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          whileHover={{ y: -5, scale: 1.02 }}
+        >
           <div className="gateway-icon">
             <svg viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -101,8 +125,9 @@ export default function LandingGateway() {
             <li>Candidate Assessment Rating</li>
           </ul>
           <button className="btn btn-primary w-fill" onClick={() => enterPersona('employer')}>Enter Recruiter View</button>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
 }
+
