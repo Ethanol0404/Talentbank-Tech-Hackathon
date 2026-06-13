@@ -41,7 +41,7 @@ export default function LandingGateway() {
       </div>
 
       <div className="hero-section">
-        <img src="logo.jpg" alt="UniOS Logo" style={{ height: '100px', borderRadius: '16px', marginBottom: '20px', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.08)' }} />
+        <img src="/logo.jpg" alt="UniOS Logo" style={{ height: '100px', borderRadius: '16px', marginBottom: '20px', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.08)' }} />
         <h1>Welcome to UniOS</h1>
         <p>The Data-Driven Talent Alignment Ecosystem</p>
       </div>

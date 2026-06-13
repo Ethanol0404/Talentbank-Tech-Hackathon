@@ -37,7 +37,7 @@ export default function GlobalSidebar() {
     <aside className="global-sidebar" id="global-sidebar">
       <div className="sidebar-header">
         <div className="logo logo-clickable" onClick={handleExit} title="Exit View" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <img src="logo.jpg" alt="UniOS Logo" style={{ height: '32px', borderRadius: '6px' }} />
+          <img src="/logo.jpg" alt="UniOS Logo" style={{ height: '32px', borderRadius: '6px' }} />
           <span className="logo-text">UniOS</span>
         </div>
       </div>

@@ -49,7 +49,7 @@ export default function GlobalHeader() {
           </svg>
         </button>
         <div className="logo-clickable" onClick={handleExit} title="Exit View" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="logo.jpg" alt="UniOS Logo" style={{ height: '32px', verticalAlign: 'middle', marginRight: '8px', borderRadius: '6px' }} />
+          <img src="/logo.jpg" alt="UniOS Logo" style={{ height: '32px', verticalAlign: 'middle', marginRight: '8px', borderRadius: '6px' }} />
           <span className="logo-text">
             UniOS 
             <span id="header-persona-label" style={{ color: 'var(--accent-blue)', fontSize: '0.95rem', fontWeight: 600, marginLeft: '8px' }}>
