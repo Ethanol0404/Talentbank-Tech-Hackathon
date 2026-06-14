@@ -2,12 +2,21 @@
 
 import React from 'react';
 import { useAppState } from '@/context/AppStateContext';
+import { useRouter } from 'next/navigation';
 
 export default function GlobalSidebar() {
-  const { activePersona, activeScreen, setActiveScreen, enterPersona } = useAppState();
+  const { activePersona, activeScreen, setActiveScreen, enterPersona, currentUser } = useAppState();
+  const router = useRouter();
 
-  const handleExit = () => {
-    enterPersona('');
+  const handleLogoClick = () => {
+    if (currentUser) {
+      if (currentUser.role === 'candidate') router.push('/candidate');
+      else if (currentUser.role === 'university') router.push('/university');
+      else if (currentUser.role === 'employer') router.push('/employer');
+    } else {
+      enterPersona('');
+      router.push('/');
+    }
   };
 
   const menuConfig = {
@@ -36,7 +45,7 @@ export default function GlobalSidebar() {
   return (
     <aside className="global-sidebar" id="global-sidebar">
       <div className="sidebar-header">
-        <div className="logo logo-clickable" onClick={handleExit} title="Exit View" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <div className="logo logo-clickable" onClick={handleLogoClick} title={currentUser ? "Dashboard" : "Exit View"} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <img src="/logo.jpg" alt="UniOS Logo" style={{ height: '32px', borderRadius: '6px' }} />
           <span className="logo-text">UniOS</span>
         </div>

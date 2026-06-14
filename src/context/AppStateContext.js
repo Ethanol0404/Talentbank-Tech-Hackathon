@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { supabase } from '@/lib/supabase';
 
 const AppStateContext = createContext();
 
@@ -161,6 +162,8 @@ export function AppStateProvider({ children }) {
   const [verifiedOnly, setVerifiedOnly] = useState(false);
   const [selectedEvalCandidate, setSelectedEvalCandidate] = useState(initialMockStudents[1]); // Default to Alice Tan
   const [apiConnected, setApiConnected] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [loadingUser, setLoadingUser] = useState(true);
 
   useEffect(() => {
     // Check connection to local python serverless API
@@ -168,6 +171,61 @@ export function AppStateProvider({ children }) {
       .then(res => res.json())
       .then(data => setApiConnected(data.status === 'healthy'))
       .catch(() => setApiConnected(false));
+  }, []);
+
+  useEffect(() => {
+    if (!supabase) {
+      setLoadingUser(false);
+      return;
+    }
+
+    const fetchSessionAndProfile = async () => {
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session?.user) {
+          const { data: profile } = await supabase
+            .from('persons')
+            .select('*')
+            .eq('id', session.user.id)
+            .single();
+          setCurrentUser(profile ? { ...session.user, ...profile } : session.user);
+          
+          // Sync cookie
+          const maxAge = session.expires_in || 3600;
+          document.cookie = `sb-access-token=${session.access_token}; path=/; max-age=${maxAge}; SameSite=Lax; Secure`;
+        } else {
+          setCurrentUser(null);
+        }
+      } catch (err) {
+        console.error('Error fetching session/profile:', err);
+      } finally {
+        setLoadingUser(false);
+      }
+    };
+
+    fetchSessionAndProfile();
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+      if (session?.user) {
+        const { data: profile } = await supabase
+          .from('persons')
+          .select('*')
+          .eq('id', session.user.id)
+          .single();
+        setCurrentUser(profile ? { ...session.user, ...profile } : session.user);
+
+        const maxAge = session.expires_in || 3600;
+        document.cookie = `sb-access-token=${session.access_token}; path=/; max-age=${maxAge}; SameSite=Lax; Secure`;
+      } else {
+        setCurrentUser(null);
+        document.cookie = 'sb-access-token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax; Secure';
+      }
+      setLoadingUser(false);
+    });
+
+    return () => {
+      subscription?.unsubscribe();
+    };
   }, []);
 
   const enterPersona = (persona) => {
@@ -228,7 +286,10 @@ export function AppStateProvider({ children }) {
       apiConnected,
       enterPersona,
       toggleShortlist,
-      addStudent
+      addStudent,
+      currentUser,
+      setCurrentUser,
+      loadingUser
     }}>
       {children}
     </AppStateContext.Provider>

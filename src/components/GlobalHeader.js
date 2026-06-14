@@ -3,16 +3,43 @@
 import React from 'react';
 import { useAppState } from '@/context/AppStateContext';
 import { useTheme } from '@/context/ThemeContext';
+import { useRouter } from 'next/navigation';
+import { supabase } from '@/lib/supabase';
 
 export default function GlobalHeader() {
-  const { activePersona, enterPersona, selectedEvalCandidate } = useAppState();
+  const { activePersona, enterPersona, selectedEvalCandidate, currentUser } = useAppState();
   const { isDark, toggleTheme } = useTheme();
+  const router = useRouter();
 
   const handleExit = () => {
     enterPersona('');
   };
 
+  const handleLogout = async () => {
+    if (supabase) {
+      await supabase.auth.signOut();
+    }
+    enterPersona('');
+    window.location.href = '/';
+  };
+
+  const handleLogoClick = () => {
+    if (currentUser) {
+      if (currentUser.role === 'candidate') router.push('/candidate');
+      else if (currentUser.role === 'university') router.push('/university');
+      else if (currentUser.role === 'employer') router.push('/employer');
+    } else {
+      enterPersona('');
+      router.push('/');
+    }
+  };
+
   const getPersonaLabel = () => {
+    if (currentUser) {
+      if (currentUser.role === 'candidate') return 'Candidate Account';
+      if (currentUser.role === 'university') return 'University Staff';
+      if (currentUser.role === 'employer') return 'Employer Account';
+    }
     if (activePersona === 'student') return 'Student View';
     if (activePersona === 'university') return 'Lecturer View';
     if (activePersona === 'employer') return 'Recruiter View';
@@ -20,15 +47,21 @@ export default function GlobalHeader() {
   };
 
   const getUserDetails = () => {
+    if (currentUser) {
+      const name = currentUser.full_name || currentUser.email || 'User';
+      const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'U';
+      return { name, initials, isLogged: true };
+    }
+
     if (activePersona === 'student') {
       const name = selectedEvalCandidate ? selectedEvalCandidate.name : 'Ahmad Faris';
       const initials = selectedEvalCandidate ? selectedEvalCandidate.portfolio.avatar : 'AF';
-      return { name, initials };
+      return { name, initials, isLogged: false };
     }
     if (activePersona === 'university') {
-      return { name: 'Lecturer Account', initials: 'L' };
+      return { name: 'Lecturer Account', initials: 'L', isLogged: false };
     }
-    return { name: 'Recruiter Portal', initials: 'R' };
+    return { name: 'Recruiter Portal', initials: 'R', isLogged: false };
   };
 
   const user = getUserDetails();
@@ -48,7 +81,7 @@ export default function GlobalHeader() {
             <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
           </svg>
         </button>
-        <div className="logo-clickable" onClick={handleExit} title="Exit View" style={{ display: 'flex', alignItems: 'center' }}>
+        <div className="logo-clickable" onClick={handleLogoClick} title={currentUser ? "Dashboard" : "Exit View"} style={{ display: 'flex', alignItems: 'center' }}>
           <img src="/logo.jpg" alt="UniOS Logo" style={{ height: '32px', verticalAlign: 'middle', marginRight: '8px', borderRadius: '6px' }} />
           <span className="logo-text">
             UniOS 
@@ -60,26 +93,28 @@ export default function GlobalHeader() {
       </div>
 
       {/* Active Persona Switcher Tab Selector */}
-      <div className="header-center">
-        <button 
-          className={`persona-btn ${activePersona === 'student' ? 'active' : ''}`} 
-          onClick={() => enterPersona('student')}
-        >
-          Student View
-        </button>
-        <button 
-          className={`persona-btn ${activePersona === 'university' ? 'active' : ''}`} 
-          onClick={() => enterPersona('university')}
-        >
-          Lecturer View
-        </button>
-        <button 
-          className={`persona-btn ${activePersona === 'employer' ? 'active' : ''}`} 
-          onClick={() => enterPersona('employer')}
-        >
-          Recruiter View
-        </button>
-      </div>
+      {!currentUser && (
+        <div className="header-center">
+          <button 
+            className={`persona-btn ${activePersona === 'student' ? 'active' : ''}`} 
+            onClick={() => enterPersona('student')}
+          >
+            Student View
+          </button>
+          <button 
+            className={`persona-btn ${activePersona === 'university' ? 'active' : ''}`} 
+            onClick={() => enterPersona('university')}
+          >
+            Lecturer View
+          </button>
+          <button 
+            className={`persona-btn ${activePersona === 'employer' ? 'active' : ''}`} 
+            onClick={() => enterPersona('employer')}
+          >
+            Recruiter View
+          </button>
+        </div>
+      )}
 
       <div className="header-right">
         <button className="btn-icon-only" id="theme-toggle-btn" aria-label="Toggle Dark Mode" onClick={toggleTheme} style={{ borderRadius: '50%' }}>
@@ -95,7 +130,11 @@ export default function GlobalHeader() {
           <span className="user-profile-avatar" id="user-avatar-initial">{user.initials}</span>
           <span id="user-display-name">{user.name}</span>
         </div>
-        <button className="btn btn-secondary" onClick={handleExit} style={{ padding: '6px 12px', fontSize: '0.8rem' }}>Exit View</button>
+        {user.isLogged ? (
+          <button className="btn btn-secondary" onClick={handleLogout} style={{ padding: '6px 12px', fontSize: '0.8rem' }}>Logout</button>
+        ) : (
+          <button className="btn btn-secondary" onClick={handleExit} style={{ padding: '6px 12px', fontSize: '0.8rem' }}>Exit View</button>
+        )}
       </div>
     </header>
   );
