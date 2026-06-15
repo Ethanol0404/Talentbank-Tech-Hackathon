@@ -80,7 +80,7 @@ export default function TalentSearch() {
           
           <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
             <label className="data-label" style={{ fontWeight: 600, fontSize: '0.85rem' }}>Target Skills</label>
-            <div className="tag-pills-container" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', padding: '10px 14px', minHeight: '46px', backgroundColor: '#FFFFFF' }}>
+            <div className="tag-pills-container" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', padding: '10px 14px', minHeight: '46px', backgroundColor: 'var(--bg-card)' }}>
               {filterSkills.map((skill, idx) => (
                 <span key={idx} className="tag-pill" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', backgroundColor: 'rgba(37,99,235,0.08)', border: '1px solid rgba(37,99,235,0.15)', color: 'var(--accent-blue)', fontSize: '0.8rem', fontWeight: 600, padding: '3px 10px', borderRadius: '8px' }}>
                   {skill}
@@ -113,7 +113,7 @@ export default function TalentSearch() {
           </div>
 
           <div className="form-group" style={{ marginTop: '24px' }}>
-            <div className="toggle-switch-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', userSelect: 'none', padding: '12px 14px', border: '1px solid var(--border-light)', borderRadius: '10px', backgroundColor: '#FFFFFF' }}>
+            <div className="toggle-switch-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', userSelect: 'none', padding: '12px 14px', border: '1px solid var(--border-light)', borderRadius: '10px', backgroundColor: 'var(--bg-card)' }}>
               <label htmlFor="verified-only-checkbox" style={{ cursor: 'pointer', flexGrow: 1 }}>
                 <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>Verified Skills Only</span>
                 <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', margin: 0 }}>Only show badges verified by faculty</p>
