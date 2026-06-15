@@ -122,7 +122,6 @@ venv.bak/
 
 # CareerOS specific ignores
 hao/outputs/run_*.json
-hao/config/settings.py
 
 # Node.js
 node_modules/
