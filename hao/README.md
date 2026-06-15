@@ -203,6 +203,8 @@ Navigate to `http://localhost:8000/api/docs` to access the interactive Swagger A
 
 The frontend client accesses the server endpoints via standard HTTP REST calls. No Python environment is required.
 
+**Where to put this code:** You should place these `fetch` snippets inside your frontend components (e.g., inside a React `onClick` event handler for an "Analyze" button, or inside a dedicated `src/lib/api.ts` service file).
+
 **Production API Base URL (on Vercel):** `https://<your-vercel-domain>.vercel.app/api/...`
 
 #### 1. Skill Extraction Integration Example
