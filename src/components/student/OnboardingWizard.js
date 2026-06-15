@@ -50,12 +50,14 @@ export default function OnboardingWizard() {
     setProgress(0);
     setStatusText('Initializing connection to AI Router...');
 
+    //this is the mock data, we will be replace by an engine
+
     try {
       // Simulate progress states
       setTimeout(() => { setProgress(15); setStatusText('Parsing document structure...'); }, 200);
       setTimeout(() => { setProgress(45); setStatusText('AI Engine: Extracting hidden skills...'); }, 500);
       setTimeout(() => { setProgress(75); setStatusText('AI Engine: Mapped to target industry alignments...'); }, 800);
-      
+
       // Wait for simulation
       await new Promise(resolve => setTimeout(resolve, 1100));
 
@@ -155,14 +157,14 @@ export default function OnboardingWizard() {
 
       <div className="split-grid">
         {/* Left Column: Drag & Drop zone */}
-        <motion.div 
+        <motion.div
           className="card"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
           <div className="card-title">Upload Profile Documents</div>
-          <div 
+          <div
             className={`upload-zone ${dragOver ? 'dragover' : ''}`}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
@@ -171,16 +173,16 @@ export default function OnboardingWizard() {
             style={{ cursor: 'pointer' }}
           >
             <svg className="upload-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
             </svg>
             <h3>Drag and drop your file here</h3>
             <p>Supports PDF, DOCX (Max 10MB)</p>
             <label className="btn btn-primary" style={{ marginTop: '8px', cursor: 'pointer' }} onClick={(e) => e.stopPropagation()}>
               Browse Files
-              <input 
-                type="file" 
+              <input
+                type="file"
                 ref={fileInputRef}
-                style={{ display: 'none' }} 
+                style={{ display: 'none' }}
                 accept=".pdf,.docx,.txt"
                 onChange={handleFileSelect}
               />
@@ -201,7 +203,7 @@ export default function OnboardingWizard() {
         </motion.div>
 
         {/* Right Column: Document Checklist */}
-        <motion.div 
+        <motion.div
           className="card"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}

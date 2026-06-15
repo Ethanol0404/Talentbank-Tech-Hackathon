@@ -1,12 +1,13 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useAppState } from '@/context/AppStateContext';
 import { useTheme } from '@/context/ThemeContext';
 import { motion } from 'framer-motion';
 
 export default function LandingGateway() {
-  const { enterPersona } = useAppState();
+  const { enterPersona, currentUser } = useAppState();
   const { isDark, toggleTheme } = useTheme();
 
   return (
@@ -50,6 +51,14 @@ export default function LandingGateway() {
         <img src="/logo.jpg" alt="UniOS Logo" style={{ height: '100px', borderRadius: '16px', display: 'block', margin: '0 auto 20px auto', boxShadow: '0 4px 15px rgba(0, 0, 0, 0.08)' }} />
         <h1>Welcome to UniOS</h1>
         <p>The Data-Driven Talent Alignment Ecosystem</p>
+        <div className="flex-gap-16" style={{ justifyContent: 'center', marginTop: '24px', flexWrap: 'wrap' }}>
+          {currentUser ? (
+            <Link href={currentUser.role === 'candidate' ? '/candidate' : currentUser.role === 'university' ? '/university' : '/employer'} className="btn btn-primary">Go to Dashboard</Link>
+          ) : (
+            <Link href="/login" className="btn btn-primary">Login</Link>
+          )}
+          <span className="data-label">or preview a workspace below</span>
+        </div>
       </motion.div>
 
       {/* Core 3-Column Grid */}
@@ -130,4 +139,3 @@ export default function LandingGateway() {
     </div>
   );
 }
-

@@ -20,6 +20,11 @@ Create a `.env` file in the project root directory and add the API keys:
 GROQ_API_KEY="your_groq_api_key"
 OPENROUTER_API_KEY="your_openrouter_api_key"
 ```
+
+**🔑 How to get the API Keys (Both are FREE):**
+- **Groq API Key**: Go to [console.groq.com/keys](https://console.groq.com/keys), sign in, and click "Create API Key".
+- **OpenRouter API Key**: Go to [openrouter.ai/keys](https://openrouter.ai/keys), sign in, and click "Create Key".
+
 *(Note: For Vercel production deployment, configure these keys under the **Environment Variables** section in the Vercel Dashboard).*
 
 #### 3. Complete Server Code (`api/index.py`)
