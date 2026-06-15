@@ -50,49 +50,36 @@ export default function OnboardingWizard() {
     setProgress(0);
     setStatusText('Initializing connection to AI Router...');
 
-    //this is the mock data, we will be replace by an engine
-
     try {
-      // Simulate progress states
-      setTimeout(() => { setProgress(15); setStatusText('Parsing document structure...'); }, 200);
-      setTimeout(() => { setProgress(45); setStatusText('AI Engine: Extracting hidden skills...'); }, 500);
-      setTimeout(() => { setProgress(75); setStatusText('AI Engine: Mapped to target industry alignments...'); }, 800);
+      // Real AI Backend Fetch (Groq Llama-3)
+      const [skillsRes, readinessRes] = await Promise.all([
+        fetch('/api/extract-skills', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: text, source_type: 'resume' })
+        }),
+        fetch('/api/evaluate-readiness', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ resume_text: text, projects: [], workshops: [] })
+        })
+      ]);
 
-      // Wait for simulation
-      await new Promise(resolve => setTimeout(resolve, 1100));
-
-      const lowerText = text.toLowerCase() + ' ' + fileName.toLowerCase();
-      let tech = [];
-      let soft = [];
-      let role = 'Software Engineer';
-      let overall = 78;
-
-      if (lowerText.includes('python') || lowerText.includes('data science') || lowerText.includes('analyst') || lowerText.includes('machine')) {
-        tech = ['Python', 'SQL', 'Machine Learning', 'Data Analysis', 'Tableau'];
-        soft = ['Analytical Thinking', 'Attention to Detail'];
-        role = 'Data Scientist';
-        overall = 85;
-      } else if (lowerText.includes('agile') || lowerText.includes('scrum') || lowerText.includes('project') || lowerText.includes('business')) {
-        tech = ['Agile PM', 'Scrum Master', 'SQL', 'Tableau', 'User Stories'];
-        soft = ['Communication', 'Stakeholder Alignment'];
-        role = 'Business Analyst';
-        overall = 94;
-      } else if (lowerText.includes('docker') || lowerText.includes('cloud') || lowerText.includes('aws') || lowerText.includes('devops') || lowerText.includes('kubernetes')) {
-        tech = ['Docker', 'AWS Cloud', 'Kubernetes', 'Linux Shell', 'CI/CD'];
-        soft = ['Systems Architecture', 'Troubleshooting'];
-        role = 'DevOps Engineer';
-        overall = 82;
-      } else if (lowerText.includes('security') || lowerText.includes('cyber') || lowerText.includes('network')) {
-        tech = ['Bash Scripting', 'Penetration Testing', 'Security Audits', 'Network Protocols'];
-        soft = ['Incident Response', 'Vulnerability Analysis'];
-        role = 'Security Analyst';
-        overall = 88;
-      } else {
-        tech = ['Java Core', 'REST APIs', 'Git Version Control', 'Docker'];
-        soft = ['Problem Solving', 'Collaborative Coding'];
-        role = 'Backend Software Engineer';
-        overall = 76;
+      if (!skillsRes.ok || !readinessRes.ok) {
+        throw new Error('AI Backend failed to process the document.');
       }
+
+      const skillsData = await skillsRes.json();
+      const readinessData = await readinessRes.json();
+
+      let tech = skillsData.technical_skills || [];
+      let soft = skillsData.soft_skills || [];
+      let role = (skillsData.mapped_roles && skillsData.mapped_roles.length > 0) ? skillsData.mapped_roles[0] : 'Software Engineer';
+      let overall = readinessData.overall_score || 78;
+      
+      let aiStrengths = readinessData.strengths || ['Profile matches targeted role directives'];
+      let aiGaps = readinessData.gaps || ['Provide more measurable outcomes in bullet points'];
+
 
       setProgress(100);
       setStatusText('Syncing profile and loading Candidate Dashboard...');
@@ -125,10 +112,11 @@ export default function OnboardingWizard() {
         },
         xai: {
           summary: `AI Diagnostic parsed profile for ${candidateName}. Detected capabilities in ${tech.join(', ')}. Mapped to targeted industry role ${role} with an overall readiness alignment of ${overall}%.`,
-          strengths: ['Extracted profile matches target role directives', 'Verified technical badges successfully parsed'],
-          gaps: ['Verify additional transcript outcomes to improve readiness score']
+          strengths: aiStrengths,
+          gaps: aiGaps
         }
       };
+
 
       addStudent(parsedStudent);
 
